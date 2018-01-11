@@ -88,7 +88,7 @@ def get_TS_graphs(df, target_name, group_name, date_name, n_samples=2, figsize=(
 
     gb = df.groupby(group_name)
 
-    sampled_groups = np.random.choice(gb.groups.keys(), n_samples)
+    sampled_groups = np.random.choice(list(gb.groups.keys()), n_samples)
 
     # First, we extract the feature ranges and unique categorical values for the samples.
     # We do *not* make sure the samples have the same date ranges.

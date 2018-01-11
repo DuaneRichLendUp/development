@@ -1,0 +1,13 @@
+import numpy as np
+import scipy.stats as stats
+
+def binomial_ranges(p,n,alpha):
+    """
+    We want to answer this question:
+
+    If I sample n bernoulli trials with probability p, what is 
+    the 1-alpha confidence interval for my observation of successes?
+    """
+    left = stats.binom.ppf(alpha/2, n, p)/n
+    right = stats.binom.ppf(1-alpha/2, n, p)/n
+    return (left,right)
